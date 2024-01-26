@@ -1,0 +1,13 @@
+<div class="dash">
+    <input type="text" placeholder="Search by product name" [(ngModel)]="searchTerm" (keyup.enter)="loadProductList()">
+  </div>
+  
+  <div *ngIf="productList.length > 0">
+    <div class="card" *ngFor="let product of productList">
+      <mat-card>
+        <img mat-card-image [src]="product.image" alt="{{ product.name }}">
+        <mat-card-title>{{ product.name }}</mat-card-title>
+      </mat-card>
+    </div>
+  </div>
+  
